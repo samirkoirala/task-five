@@ -1,0 +1,5 @@
+services:
+  nginx:
+    image: my-nginx:v1
+    ports:
+      - "80:80"
