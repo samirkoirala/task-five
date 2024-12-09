@@ -16,8 +16,9 @@ jobs:
 
       - name: Docker compose up
         run: |
+          docker build -t my-nginx:dev
           cd dev
-          docker compose -f docker-compose-dev.yml up -d
+          ./deploy.sh
 
   deploy-prod:
     if: github.ref == 'refs/heads/main'
@@ -28,5 +29,7 @@ jobs:
 
       - name: Docker compose up
         run: |
+          docker build -t my-nginx:prod
           cd prod
-          docker compose -f docker-compose-prod.yml up -d
+          ./deply.sh
+          
